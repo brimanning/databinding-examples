@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="increment">Increment!</string>
+
+    <string name="flip">Flip</string>
+    <string name="flop">Flop</string>
 </resources>
