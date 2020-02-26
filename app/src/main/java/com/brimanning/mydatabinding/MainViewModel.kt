@@ -13,6 +13,8 @@ class MainViewModel : ViewModel() {
 
     val flipFlop = MutableLiveData<@StringRes Int>()
 
+    val flipFlopModel = MutableLiveData<FlipFlopModel>()
+
     init {
         count.value = 0
         flipOrFlop()
@@ -29,9 +31,19 @@ class MainViewModel : ViewModel() {
             flipFlop.value = R.string.flip
         }
 
+        if (flipFlopModel.value?.flipFlopString == R.string.flop) {
+            flipFlopModel.value = FlipFlopModel(R.string.flip)
+        } else {
+            flipFlopModel.value = FlipFlopModel(R.string.flop)
+        }
+
         viewModelScope.launch {
             delay(5000)
             flipOrFlop()
         }
     }
+
+    data class FlipFlopModel(
+        @StringRes val flipFlopString: Int
+    )
 }
