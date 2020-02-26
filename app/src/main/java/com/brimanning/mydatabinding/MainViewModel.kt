@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     val count = MutableLiveData<Int>()
+    val entryValue = MutableLiveData<String>()
 
     init {
         count.value = 0
